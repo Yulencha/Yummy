@@ -89,8 +89,10 @@ class CardComponent {
     if (isDisabled === true) {
       this.html.classList.remove("state_selected", "state_hovered");
       this.html.classList.add("state_disabled");
-      this.html.querySelector(".card-offer").innerHTML =
-        "Печалька, с курой закончился.";
+
+      this.html.querySelector(
+        ".card-offer"
+      ).innerHTML = `Печалька, ${this.obj.params.taste} закончился.`;
     } else if (isDisabled === false) {
       this.html.classList.remove("state_disabled");
       this.html.querySelector(".card-offer").innerHTML =
@@ -130,7 +132,7 @@ let arr = [
   {
     title: "Нямушка",
     type: "Корм для кошек",
-    isAvailable: true,
+    isAvailable: false,
     params: {
       preview: "Сказочное заморское яство",
       taste: "с рыбой",
@@ -144,7 +146,7 @@ let arr = [
   {
     title: "Нямушка",
     type: "Корм для кошек",
-    isAvailable: false,
+    isAvailable: true,
     params: {
       preview: "Сказочное заморское яство",
       taste: "с курой",
